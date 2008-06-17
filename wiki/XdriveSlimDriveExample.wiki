@@ -1,4 +1,9 @@
-#summary One-sentence summary of this page.
+#summary Example Flex application using as3xdrivelib
+
+
+= Xdrive SlimDrive Example =
+
+http://as3xdrivelib.googlecode.com/svn/trunk/samples/XdiveSlimDrive600x400.png
 
 = Introduction =
 
