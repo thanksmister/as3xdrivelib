@@ -1,0 +1,1551 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="XdriveAPI,com.xdrive.json.XdriveAPI,BASE_URL,JSON_END_POINT,JSON_LOGIN_END_POINT,OPC_URL,addContacts,createAsset,createCollection,createFolder,deleteAssets,downloadBinaryFile,downloadBinaryZip,downloadFile,downloadZip,getAssetsByName,getCollectionListing,getContacts,getFileListing,getQuota,grantPermissions,listOutboundShares,login,logout,moveAssets,previewFile,publishAssets,refreshFolder,reindexAsset,renameAsset,revokePermissions,sendAssets,unmapFolders,unpublishAssets,updateCollection,uploadFile,uploadZip" name="keywords">
+<title>com.xdrive.json.XdriveAPI</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'XdriveAPI - 'Xdrive ActionScript 3 Library'';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Xdrive ActionScript 3 Library</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?com/xdrive/json/XdriveAPI.html&amp;com/xdrive/json/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;XdriveAPI</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class XdriveAPI"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.xdrive.json</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class XdriveAPI</td>
+</tr>
+</table>
+<p></p>
+  The XdriveAPI class abstracts the Xdrive JSON API found at <a href='http://dev.aol.com/xdrive'>http://dev.aol.com/xdrive</a>.
+  <p>
+  XdriveAPI is the helper class for accessing the Open Xdrive API. It provides much of the client-side 
+  functionality for applications; for example, logging in and out, uploading files, sharing files, and basic
+  file management. These functions build the requests with the appropriate JSON payload and decode the responses.
+  </p>
+  <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#BASE_URL">BASE_URL</a> : String = "http://plus.xdrive.com/"<div class="summaryTableDescription">[static]
+   Private variable that we provide read-only access to
+   </div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#JSON_END_POINT">JSON_END_POINT</a> : String = "http://plus.xdrive.com/json/v1.2/"<div class="summaryTableDescription">[static]
+   This is the end point for the service that we talk to, it is not secure.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#JSON_LOGIN_END_POINT">JSON_LOGIN_END_POINT</a> : String = "https://plus.xdrive.com/json/v1.2/"<div class="summaryTableDescription">[static]
+   This is the end point for the secure service that we talk to.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#OPC_URL">OPC_URL</a> : String = "http://public.xdrive.com/"<div class="summaryTableDescription">[static]
+   The the URL to the open pubish channel server, the public Xdrive server
+   for RSS feeds and assets.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#XdriveAPI()">XdriveAPI</a>()</div>
+<div class="summaryTableDescription">
+   Xdrive API constructor.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addContacts()">addContacts</a>(contacts:ArrayCollection):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a>
+</div>
+<div class="summaryTableDescription">
+   Adds list of contacts objects to add to the user's address book.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#createAsset()">createAsset</a>(media:<a href="vo/Media.html">Media</a>, parentid:String = "", isexternalsource:Boolean = false):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a>
+</div>
+<div class="summaryTableDescription">
+   This method creates a new empty <code>Media</code> from an external source such as an aggregation source.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#createCollection()">createCollection</a>(collection:<a href="vo/Collection.html">Collection</a>):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a>
+</div>
+<div class="summaryTableDescription">
+   Create a new <code>Collection</code> object.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#createFolder()">createFolder</a>(folder:<a href="vo/Folder.html">Folder</a>, parentid:String = "", renamecollision:Boolean = true):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a>
+</div>
+<div class="summaryTableDescription">
+   This method creates a new <code>Folder</code> in the specified destination <code>Folder</code>.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#deleteAssets()">deleteAssets</a>(assets:Array):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a>
+</div>
+<div class="summaryTableDescription">
+   This method expunges the object from the system, freeing up any resources it may have held.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#downloadBinaryFile()">downloadBinaryFile</a>(media:<a href="vo/Media.html">Media</a>, urlLoader:URLLoader):void</div>
+<div class="summaryTableDescription">
+   Return the binary data of a <code>Media</code> asset using a <code>URLLoader</code (this to be moved to block read/write).</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#downloadBinaryZip()">downloadBinaryZip</a>(files:Array, urlLoader:URLLoader):void</div>
+<div class="summaryTableDescription">
+   Downloads a zipped file of the current selection of <code>Media</code> or <code>Folder</code> objects.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#downloadFile()">downloadFile</a>(media:<a href="vo/Media.html">Media</a>, file:FileReference):void</div>
+<div class="summaryTableDescription">
+   Downloads a <code>Media</code> asset.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#downloadZip()">downloadZip</a>(files:Array, file:FileReference):void</div>
+<div class="summaryTableDescription">
+   Downloads a zipped file of the current selection of <code>Media</code> or <code>Folder</code> objects.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getAssetsByName()">getAssetsByName</a>(assets:Array):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a>
+</div>
+<div class="summaryTableDescription">
+   This method takes an array of sparse objects and returns their populated form.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getCollectionListing()">getCollectionListing</a>(collection:<a href="vo/Collection.html">Collection</a>, fetchfullfields:Boolean = false):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a>
+</div>
+<div class="summaryTableDescription">
+   Get collection listing returns a list of all the <code>Collection</code> objects.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getContacts()">getContacts</a>(contacts:ArrayCollection):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a>
+</div>
+<div class="summaryTableDescription">
+   Retrieves the contact listing.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getFileListing()">getFileListing</a>(folder:<a href="vo/Folder.html">Folder</a>):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a>
+</div>
+<div class="summaryTableDescription">
+   This method returns the contents of the <code>Folder</code> specified or the root ("My Xdrive") folder if no folder id is specified.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getQuota()">getQuota</a>(user:<a href="vo/User.html">User</a>):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a>
+</div>
+<div class="summaryTableDescription">
+   This method returns the user's account quota information.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#grantPermissions()">grantPermissions</a>(folders:Array, share:<a href="vo/Share.html">Share</a>, isPrivate:Boolean = false):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a>
+</div>
+<div class="summaryTableDescription">
+   Grants permissions on <code>Folder</code> or <code>Collection</code> objects to other users.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#listOutboundShares()">listOutboundShares</a>(asset:Object, shares:ArrayCollection = null):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a>
+</div>
+<div class="summaryTableDescription">
+   Get listing of the outbound shares for an <code>Folder</code> or <code>Collection</code>.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#login()">login</a>(user:<a href="vo/User.html">User</a>):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a>
+</div>
+<div class="summaryTableDescription">
+   This method logs the member in and returns his information.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#logout()">logout</a>(user:<a href="vo/User.html">User</a>):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a>
+</div>
+<div class="summaryTableDescription">
+   This method invalidates the users session, essentially loggin the user out of the API.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#moveAssets()">moveAssets</a>(assets:Array, destination:<a href="vo/Folder.html">Folder</a>):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a>
+</div>
+<div class="summaryTableDescription">
+   This method moves one or more <code>Media</code> or <code>Folder</code> objects from any location to a specified destination <code>Folder</code>.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#previewFile()">previewFile</a>(media:<a href="vo/Media.html">Media</a>, type:String = ""):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a>
+</div>
+<div class="summaryTableDescription">
+   Returns the thumbnail of a <code>Media</code> file.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#publishAssets()">publishAssets</a>(assets:Array):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a>
+</div>
+<div class="summaryTableDescription">
+   Publish list of <code>Media</code>, <code>Folder</code>, or <code>Collection</code> objects by creating a public publish id for the asset.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#refreshFolder()">refreshFolder</a>(folder:<a href="vo/Folder.html">Folder</a>):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a>
+</div>
+<div class="summaryTableDescription">
+   Refreshes the server side cache fro the provided <code>Folder</code>.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#reindexAsset()">reindexAsset</a>(media:<a href="vo/Media.html">Media</a>):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a>
+</div>
+<div class="summaryTableDescription">
+   This method reindexes a <code>Media</code> asset.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#renameAsset()">renameAsset</a>(asset:Object, newname:String):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a>
+</div>
+<div class="summaryTableDescription">
+   This method renames a <code>Media</code>, <code>Folder</code>, or <code>Collection</code>.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#revokePermissions()">revokePermissions</a>(asset:Object):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a>
+</div>
+<div class="summaryTableDescription">
+   Revoke permission to for a shared asset.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#sendAssets()">sendAssets</a>(assets:Array, share:<a href="vo/Share.html">Share</a>):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a>
+</div>
+<div class="summaryTableDescription">
+   Share list of <code>Media</code>, <code>Folder</code>, or <code>Collection</code> objects to a share via email.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#unmapFolders()">unmapFolders</a>(folders:Array):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a>
+</div>
+<div class="summaryTableDescription">
+   Unmaps Array of <code>Folder</code> objects that have been mapped to another users account.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#unpublishAssets()">unpublishAssets</a>(assets:Array):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a>
+</div>
+<div class="summaryTableDescription">
+   Unpublish list of <code>Media</code>, <code>Folder</code>, or <code>Collection</code> objects by removing the public publish id for the asset.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#updateCollection()">updateCollection</a>(collection:<a href="vo/Collection.html">Collection</a>, publish:Boolean = false, savename:Boolean = true, saveshow:Boolean = true):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a>
+</div>
+<div class="summaryTableDescription">
+   Updates the changes for an existing <code>Collection</code>.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#uploadFile()">uploadFile</a>(media:<a href="vo/Media.html">Media</a>, file:FileReference, parentid:String = "", publish:Boolean = false):void</div>
+<div class="summaryTableDescription">
+   Upload single asset to a parent directory based on <code>Folder</code> id.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#uploadZip()">uploadZip</a>(folder:<a href="vo/Folder.html">Folder</a>, file:FileReference, parentid:String = ""):void</div>
+<div class="summaryTableDescription">
+   This method allows you to upload multiple files to a single destination <code>Folder</code>.</div>
+</td><td class="summaryTableOwnerCol">XdriveAPI</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="BASE_URL"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">BASE_URL</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var BASE_URL:String = "http://plus.xdrive.com/"</code><p>
+   Private variable that we provide read-only access to
+   </p></div>
+<a name="JSON_END_POINT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">JSON_END_POINT</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var JSON_END_POINT:String = "http://plus.xdrive.com/json/v1.2/"</code><p>
+   This is the end point for the service that we talk to, it is not secure.
+   </p></div>
+<a name="JSON_LOGIN_END_POINT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">JSON_LOGIN_END_POINT</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var JSON_LOGIN_END_POINT:String = "https://plus.xdrive.com/json/v1.2/"</code><p>
+   This is the end point for the secure service that we talk to.  This end point
+   is used to do secure login.  Once you login with this service, subsequent calls
+   will use the regulr service end point.
+   </p></div>
+<a name="OPC_URL"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">OPC_URL</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var OPC_URL:String = "http://public.xdrive.com/"</code><p>
+   The the URL to the open pubish channel server, the public Xdrive server
+   for RSS feeds and assets. RSS feeds can be accessed from the OPC server
+   when a folder or collection is published.  
+   
+   Publishing a <code>Folder</code> or <code>Collection</code> will produce a 
+   RSS feed that can be consumed by a RSS reader or any other type of 
+   application capable of parcing XML. 
+   
+   This server has an open cross domain policy file so Flash/Flex/AIR applications
+   can consume resources without encountering security sandbox violation issue.
+   </p></div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="XdriveAPI()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">XdriveAPI</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function XdriveAPI()</code><p>
+   Xdrive API constructor. Note that the user must have registered with Xdrive account
+   and will need to the username and password to continue.
+   </p></div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="addContacts()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addContacts</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function addContacts(contacts:ArrayCollection):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code><p>
+   Adds list of contacts objects to add to the user's address book.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">contacts</span>:ArrayCollection</code> &mdash; ArrayCollection of <code>Contact</code> objects
+   
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code> &mdash; 
+                        A value of contacts on the token and the payload value of the event which is a ArrayCollection <code>Contact</code> objects
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="createAsset()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">createAsset</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function createAsset(media:<a href="vo/Media.html">Media</a>, parentid:String = "", isexternalsource:Boolean = false):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code><p>
+   This method creates a new empty <code>Media</code> from an external source such as an aggregation source.  
+   </p><p>The file must have the <code>Media.parentid</code> set with the id of the parent <code>Folder</code> or <code>Collection</code>.
+   A blank id will create the <code>Media</code> within the root directory.</p>
+   
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">media</span>:<a href="vo/Media.html">Media</a></code> &mdash; <code>Media</code> file to create
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">parentid</span>:String</code> (default = "<code></code>")<code></code> &mdash; The id of the <code>Folder</code> or <code>Collection</code> to create the new file in
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">isexternalsource</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash; Boolean value for external source files, such as aggregation sources, we will set the "thumbnail properties in the <code>Media</code> object passed in and create thumbnails for that external source.
+   
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code> &mdash; 
+                        A value of <code>Media</code> on the token and the payload value of the event
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="createCollection()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">createCollection</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function createCollection(collection:<a href="vo/Collection.html">Collection</a>):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code><p>
+   Create a new <code>Collection</code> object.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">collection</span>:<a href="vo/Collection.html">Collection</a></code> &mdash; <code>Collection</code> to create with <code>Collection.filename</code> set to new name
+   
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code> &mdash; 
+                        A value of <code>Collection</code> on the token and the payload value of the event
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="createFolder()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">createFolder</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function createFolder(folder:<a href="vo/Folder.html">Folder</a>, parentid:String = "", renamecollision:Boolean = true):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code><p>
+   This method creates a new <code>Folder</code> in the specified destination <code>Folder</code>. 
+   If the specified destination <code>Folder</code> id is blank the the new <code>Folder</code> is created in the root ("My Xdrive") location.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">folder</span>:<a href="vo/Folder.html">Folder</a></code> &mdash; <code>Folder</code> to create with file name field set (don't leave the filename blank)
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">parentid</span>:String</code> (default = "<code></code>")<code></code> &mdash; The id of the parent <code>Folder</code>
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">renamecollision</span>:Boolean</code> (default = <code>true</code>)<code></code> &mdash; Boolean value when true will rename folder to <code>Folder(n)</code>, error will be thrown if true and a <code>Folder</code> exists with same name
+   
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code> &mdash; 
+                        A value of <code>Folder</code> on the token and the payload value of the event
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="deleteAssets()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">deleteAssets</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function deleteAssets(assets:Array):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code><p>
+   This method expunges the object from the system, freeing up any resources it may have held. Asset delete is different than asset remove.
+   Asset remove will remove the reference to the object from the container. On the other hand, if asset.delete is called with a reference object, 
+   the reference object is deleted, not the original resource.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">assets</span>:Array</code> &mdash; Array of assets (Media, Collection, Folder) to delete
+   
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code> &mdash; 
+                        A value of assets on the token and the payload value of the event which is a array <code>Media</code> objects
+   
+                        
+                     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">removeAssets</div>
+</div>
+<a name="downloadBinaryFile()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">downloadBinaryFile</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function downloadBinaryFile(media:<a href="vo/Media.html">Media</a>, urlLoader:URLLoader):void</code><p>
+   Return the binary data of a <code>Media</code> asset using a <code>URLLoader</code (this to be moved to block read/write). 
+   
+   This method would be used with AIR to write the bytes of a file to a directory on the users computer.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">media</span>:<a href="vo/Media.html">Media</a></code> &mdash; <code>Media</code> file to retrieve thumbnail
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">urlLoader</span>:URLLoader</code> &mdash; A URLLoader reference used to download the binary data of the file and receive events
+   
+   </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.net.URLLoader<br>
+<a href="http://www.adobe.com/products/air/" target="mm_external">http://www.adobe.com/products/air/</a>
+</div>
+</div>
+<a name="downloadBinaryZip()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">downloadBinaryZip</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function downloadBinaryZip(files:Array, urlLoader:URLLoader):void</code><p>
+   Downloads a zipped file of the current selection of <code>Media</code> or <code>Folder</code> objects. This method lets the member download one or more media files and 
+   folders as a single ZIP compressed archival file in a way designed to make the browser prompt the user with 
+   the file download dialog box.
+   
+   This method would be used with AIR to write the bytes of a file to a directory on the users computer
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">files</span>:Array</code> &mdash; An array of <code>Media</code> or <code>Folder</code> objects to retrieve in the zip
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">urlLoader</span>:URLLoader</code> &mdash; The URLLoader reference to handle events from the download process
+   
+   </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.net.URLLoader<br>
+<a href="http://www.adobe.com/products/air/" target="mm_external">http://www.adobe.com/products/air/</a>
+</div>
+</div>
+<a name="downloadFile()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">downloadFile</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function downloadFile(media:<a href="vo/Media.html">Media</a>, file:FileReference):void</code><p>
+   Downloads a <code>Media</code> asset.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">media</span>:<a href="vo/Media.html">Media</a></code> &mdash; <code>Media</code> asset to download
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">file</span>:FileReference</code> &mdash; The <code>FileReference</code> of the location to download the media asset
+   
+   </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.net.FileReference</div>
+</div>
+<a name="downloadZip()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">downloadZip</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function downloadZip(files:Array, file:FileReference):void</code><p>
+   Downloads a zipped file of the current selection of <code>Media</code> or <code>Folder</code> objects. This method lets the member download one or more media files and 
+   folders as a single ZIP compressed archival file in a way designed to make the browser prompt the user with 
+   the file download dialog box.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">files</span>:Array</code> &mdash; An array of <code>Media</code> or <code>Folder</code> objects to retrieve in the zip
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">file</span>:FileReference</code> &mdash; The <code>FileReference</code> of the location to download the media asset
+   
+   </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.net.FileReference</div>
+</div>
+<a name="getAssetsByName()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getAssetsByName</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getAssetsByName(assets:Array):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code><p>
+   This method takes an array of sparse objects and returns their populated form. The filename and parentid fields cannot be null. 
+   The parentid can be independent for each asset in the array. Each asset within the array can have an independent parentid value.   
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">assets</span>:Array</code> &mdash; Array of assets of type <code>Media</code>, <code>Folder</code>, or <code>Collection</code>
+   
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code> &mdash; 
+                        A value of assets on the token and the payload value of the event which is a array of <code>Media</code>, <code>Folder</code>, or <code>Collection</code> objects
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="getCollectionListing()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getCollectionListing</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getCollectionListing(collection:<a href="vo/Collection.html">Collection</a>, fetchfullfields:Boolean = false):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code><p>
+   Get collection listing returns a list of all the <code>Collection</code> objects. 
+   By default the listing will contain only the following fields for the <code>Collection</code>:
+   </p><p>fileid, filename, ismapped, isshared, icon, modified, created, and publishid</p>
+   Set the fetchfullfields value to true to retrieve the full listing of <code>Collection</code>.
+   
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">collection</span>:<a href="vo/Collection.html">Collection</a></code> &mdash; <code>Collection</code> to retrieve
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">fetchfullfields</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash; Boolean value when set to true retrieves a scaled down or sparse listing for <code>Collection</code>, false returns whole listing
+   
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code> &mdash; 
+                        A value of <code>Collection</code> on the token and the payload value of the event
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="getContacts()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getContacts</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getContacts(contacts:ArrayCollection):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code><p>
+   Retrieves the contact listing.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">contacts</span>:ArrayCollection</code> &mdash; An empty ArrayCollection to be filled by the return of this call
+   
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code> &mdash; 
+                        A value of contacts on the token and the payload value of the event which is a ArrayCollection <code>Contact</code> objects
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="getFileListing()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getFileListing</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getFileListing(folder:<a href="vo/Folder.html">Folder</a>):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code><p>
+   This method returns the contents of the <code>Folder</code> specified or the root ("My Xdrive") folder if no folder id is specified. 
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">folder</span>:<a href="vo/Folder.html">Folder</a></code> &mdash; <code>Folder</code> to retrieve file listing of
+   
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code> &mdash; 
+                        A value of <code>Folder</code> on the token and the payload value of the event
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="getQuota()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getQuota</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getQuota(user:<a href="vo/User.html">User</a>):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code><p>
+   This method returns the user's account quota information.
+   
+   </p><p>Quota information sets the following values for a <code>User</code>: <code>quotaavailable</code> for 
+   available space, <code>quotalimit</code> for maximum space of the account, and <code>quotaused</code>
+   for the amount of uses space for the account.</p>
+   
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">user</span>:<a href="vo/User.html">User</a></code> &mdash; <code>User</code> to retrieve account information for
+   
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code></td>
+</tr>
+</table>
+</div>
+<a name="grantPermissions()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">grantPermissions</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function grantPermissions(folders:Array, share:<a href="vo/Share.html">Share</a>, isPrivate:Boolean = false):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code><p>
+   Grants permissions on <code>Folder</code> or <code>Collection</code> objects to other users. 
+   
+   The shared <code>Folder</code> objects will be "mapped" into the grantee's accounts.  
+   If the user is sharing a <code>Colletion</code>, it will be mapped under the "My Collections" 
+   folder, otherwise, it will be mapped under the root directory. 
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">folders</span>:Array</code> &mdash; Array of <code>Folder</code> or <code>Collection</code> objects to to share
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">share</span>:<a href="vo/Share.html">Share</a></code> &mdash; <code>Share</code> value object containing the addressees and the permissions to set for the <code>Folder</code> objects being shared
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">isPrivate</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash; Optional boolean value to send as private share or public share (public share is published)
+   
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code> &mdash; 
+                        An value of folders on the token and the payload value of the event which is an array of <code>Folder</code> objects
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="listOutboundShares()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">listOutboundShares</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function listOutboundShares(asset:Object, shares:ArrayCollection = null):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code><p>
+   Get listing of the outbound shares for an <code>Folder</code> or <code>Collection</code>. 
+   
+   </p><p>Outbound shares represent a rostered list of users the <code>Folder</code> or <code>Collection</code> was shared with. 
+   This list will be an ArrayCollection of <code>Permission</code> objects. </p>
+   
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">asset</span>:Object</code> &mdash; A <code>Folder</code> or <code>Collection</code> to list the sharing information for
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">shares</span>:ArrayCollection</code> (default = <code>null</code>)<code></code> &mdash; ArrayCollection to store the returned list of <code>Permission</code> objects
+   
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code> &mdash; 
+                        A value of shares on the token and the payload value of the event which is an ArrayCollection of <code>Permission</code> objects
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="login()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">login</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function login(user:<a href="vo/User.html">User</a>):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code><p>
+   This method logs the member in and returns his information. 
+   It uses the OpenAuth API (<a href='http://dev.aol.com/OpenAuth'>http://dev.aol.com/OpenAuth</a>) in the server to log the user in.
+   Two cookies will be set when the user logs in. For cookie-less clients, both the jsessionid 
+   and recoveryToken can be sent in the request URL.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">user</span>:<a href="vo/User.html">User</a></code> &mdash; <code>User</code> to login
+   
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code> &mdash; 
+                        A value of <code>User</code> on the token and the payload value of the event
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="logout()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">logout</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function logout(user:<a href="vo/User.html">User</a>):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code><p>
+   This method invalidates the users session, essentially loggin the user out of the API.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">user</span>:<a href="vo/User.html">User</a></code> &mdash; <code>User</code> to log out
+   
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code></td>
+</tr>
+</table>
+</div>
+<a name="moveAssets()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">moveAssets</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function moveAssets(assets:Array, destination:<a href="vo/Folder.html">Folder</a>):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code><p>
+   This method moves one or more <code>Media</code> or <code>Folder</code> objects from any location to a specified destination <code>Folder</code>.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">assets</span>:Array</code> &mdash; Array of <code>Media</code> or <code>Folder</code> objects to move
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">destination</span>:<a href="vo/Folder.html">Folder</a></code> &mdash; The destination <code>Folder</code> or <code>Collection</code> to move the assets
+   
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code> &mdash; 
+                        A value of assets on the token and the payload value of the event which is a array of <code>Media</code> or <code>Folder</code> objects
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="previewFile()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">previewFile</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function previewFile(media:<a href="vo/Media.html">Media</a>, type:String = ""):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code><p>
+   Returns the thumbnail of a <code>Media</code> file.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">media</span>:<a href="vo/Media.html">Media</a></code> &mdash; <code>Media</code> file to retrieve thumbnail for
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">type</span>:String</code> (default = "<code></code>")<code></code> &mdash; XdriveAPIMethods type for thumbnail sizes (XdriveAPIMethods.IO_THUMBNAILSMALL, XdriveAPIMethods.IO_THUMBNAILMEDIAUM, XdriveAPIMethods.IO_THUMBNAILLARGE, XdriveAPIMethods.IO_VIEW) 
+   
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code> &mdash; 
+                        A value of <code>Media</code> on the token and the payload value of the event
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="publishAssets()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">publishAssets</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function publishAssets(assets:Array):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code><p>
+   Publish list of <code>Media</code>, <code>Folder</code>, or <code>Collection</code> objects by creating a public publish id for the asset.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">assets</span>:Array</code> &mdash; Array of <code>Media</code>, <code>Folder</code>, or <code>Collection</code> objects to publish
+   
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code> &mdash; 
+                        A value of assets on the token and the payload value of the event which is a array of <code>Media</code>, <code>Folder</code>, or <code>Collection</code> objects
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="refreshFolder()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">refreshFolder</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function refreshFolder(folder:<a href="vo/Folder.html">Folder</a>):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code><p>
+   Refreshes the server side cache fro the provided <code>Folder</code>.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">folder</span>:<a href="vo/Folder.html">Folder</a></code> &mdash; <code>Folder</code> to refresh
+   
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code> &mdash; 
+                        A value of <code>Folder</code> on the token and the payload value of the event
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="reindexAsset()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">reindexAsset</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function reindexAsset(media:<a href="vo/Media.html">Media</a>):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code><p>
+   This method reindexes a <code>Media</code> asset. It first clears the cache. This will recreate the thumbnails for the <code>Media</code>.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">media</span>:<a href="vo/Media.html">Media</a></code> &mdash; <code>Media</code> to reindex and clear from cache
+   
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code> &mdash; 
+                        A value of <code>Media</code> on the token and the payload value of the event
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="renameAsset()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">renameAsset</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function renameAsset(asset:Object, newname:String):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code><p>
+   This method renames a <code>Media</code>, <code>Folder</code>, or <code>Collection</code>. 
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">asset</span>:Object</code> &mdash; <code>Media</code>, <code>Folder</code>, or <code>Collection</code> to rename
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">newname</span>:String</code> &mdash; The new name for the asset
+   
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code> &mdash; 
+                        A value of asset on the token and the payload value of the event which is a <code>Media</code>, <code>Folder</code>, or <code>Collection</code>
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="revokePermissions()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">revokePermissions</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function revokePermissions(asset:Object):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code><p>
+   Revoke permission to for a shared asset.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">asset</span>:Object</code> &mdash; <code>Folder</code> or <code>Collection</code> to revoke permissions for
+   
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code> &mdash; 
+                        A value of asset on the token and the payload value of the event which is either a <code>Folder</code> or <code>Collection</code> object
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="sendAssets()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">sendAssets</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function sendAssets(assets:Array, share:<a href="vo/Share.html">Share</a>):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code><p>
+   Share list of <code>Media</code>, <code>Folder</code>, or <code>Collection</code> objects to a share via email.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">assets</span>:Array</code> &mdash; Array of <code>Media</code>, <code>Folder</code>, or <code>Collection</code> objects
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">share</span>:<a href="vo/Share.html">Share</a></code> &mdash; <code>Share</code> object containing the list of contact, subject, and message for the email
+   
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code> &mdash; 
+                        A value of assets on the token and the payload value of the event which is a array of <code>Media</code>, <code>Folder</code>, or <code>Collection</code> objects
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="unmapFolders()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">unmapFolders</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function unmapFolders(folders:Array):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code><p>
+   Unmaps Array of <code>Folder</code> objects that have been mapped to another users account.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">folders</span>:Array</code> &mdash; Array of <code>Folder</code> objects to unmap
+   
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code> &mdash; 
+                        A value of folders on the token and the payload value of the event which is an array of <code>Folder</code> objects
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="unpublishAssets()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">unpublishAssets</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function unpublishAssets(assets:Array):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code><p>
+   Unpublish list of <code>Media</code>, <code>Folder</code>, or <code>Collection</code> objects by removing the public publish id for the asset.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">assets</span>:Array</code> &mdash; Array of <code>Media</code>, <code>Folder</code>, or <code>Collection</code> objects
+   
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code> &mdash; 
+                        A value of assets on the token and the payload value of the event which is a array of <code>Media</code>, <code>Folder</code>, or <code>Collection</code> objects
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="updateCollection()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">updateCollection</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function updateCollection(collection:<a href="vo/Collection.html">Collection</a>, publish:Boolean = false, savename:Boolean = true, saveshow:Boolean = true):<a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code><p>
+   Updates the changes for an existing <code>Collection</code>.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">collection</span>:<a href="vo/Collection.html">Collection</a></code> &mdash; <code>Collection</code> to be udpated
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">publish</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash; Flag to auto publish show when updated
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">savename</span>:Boolean</code> (default = <code>true</code>)<code></code> &mdash; Flag used to save name changes if true or not if false
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">saveshow</span>:Boolean</code> (default = <code>true</code>)<code></code> &mdash; Flag used to save show changes if ture or not if false
+   
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../json/XdriveAPIToken.html">XdriveAPIToken</a></code> &mdash; 
+                        A value of <code>Collection</code> on the token and the payload value of the event
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="uploadFile()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">uploadFile</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function uploadFile(media:<a href="vo/Media.html">Media</a>, file:FileReference, parentid:String = "", publish:Boolean = false):void</code><p>
+   Upload single asset to a parent directory based on <code>Folder</code> id. A blank id will upload to the root ("My Xdrive") directory.
+   
+   The "basic" upload method allows the multi-part upload of one or more individual files. Entire folders structures may not be 
+   uploaded via this method. For folder upload, please refer to the <code>folderUpload()</code> method.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">media</span>:<a href="vo/Media.html">Media</a></code> &mdash; FileReference object that references the file to upload
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">file</span>:FileReference</code> &mdash; Optional value that will also publish the asset upon uploading the file
+   
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">parentid</span>:String</code> (default = "<code></code>")<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">publish</span>:Boolean</code> (default = <code>false</code>)<code></code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.net.FileReference<br>folderUpload</div>
+</div>
+<a name="uploadZip()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">uploadZip</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function uploadZip(folder:<a href="vo/Folder.html">Folder</a>, file:FileReference, parentid:String = ""):void</code><p>
+   This method allows you to upload multiple files to a single destination <code>Folder</code>. 
+   
+   The request consists of the json portion with a destFolder telling us where to put 
+   the files, and a zip file containing any number of files that will be put in the destination. 
+   The path structure of the zip file is maintained, any needed paths are created. Uploads a zipped 
+   local directory and recreates the directory structure in the users account.  
+   
+   A blank parent id will upload the file to the root ("My Xdrive") directory.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">folder</span>:<a href="vo/Folder.html">Folder</a></code> &mdash; <code>Folder</code> to upload
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">file</span>:FileReference</code> &mdash; FileReference that contains reference to the zip file and is used to handle events
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">parentid</span>:String</code> (default = "<code></code>")<code></code> &mdash; The id of the parent <code>Folder</code> to upload the zip file
+   
+   </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.net.FileReference</div>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->
