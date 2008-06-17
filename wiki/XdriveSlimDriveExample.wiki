@@ -12,6 +12,9 @@ The Xdrive SlimDrive is an example Flex RIA application that does some of the ba
 
 The application uses only a single view and no MVC.  Later, we will post an example using the as3xdrivelib with Cairngorm. 
 
+
+For this application you will need an [http://plus.xdrive.com Xdrive] or [http://www.bluestriong.com Bluestring] account.  
+
 = File =
 
 Below are links to the latest version of the SlimDrive. 
