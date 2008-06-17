@@ -1,0 +1,14 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+The Xdrive SlimDrive is an example Flex RIA application that does some of the basic file management functionality offered by the Xdrive API.   The sample application can login, logout, upload, download (both folders and files), delete, and retrieve user account information.  
+
+The application uses only a single view and no MVC.  Later, we will post an example using the as3xdrivelib with Cairngorm. 
+
+= File =
+
+Below are links to the latest version of the SlimDrive. 
+
+|| File Name || Download ||
+|| Xdrive SlimDrive || [http://as3xdrivelib.googlecode.com/svn/trunk/samples/XdriveSlimDrive.zip download zip] ||
