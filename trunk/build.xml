@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Flex Library Project ASDocs -->
+
+<project name="as3xdrivelib" default="compile" basedir=".">
+	
+	<!-- import our build properties file -->
+	<property file="./build.properties" />
+	
+	<!-- Flex Ant Tasks used to perform compc and mxml compiling more info at http://labs.adobe.com/wiki/index.php/Flex_Ant_Tasks -->
+	<taskdef resource="flexTasks.tasks" classpath="${basedir}/flexTasks/lib/flexTasks.jar" />
+	
+	
+	<!-- Execute the ASDoc Compile -->
+
+	<target name="setup" description="perform an setup operations"/>
+
+	<target name="compile" description="series of tasks to create docs and swc">
+
+		<antcall target="cleanDir" description="clean the docs directory"/>
+	
+		<antcall target="asDocs" description="full build of asdocs"/>
+	
+		<antcall target="buildSWC" description="build the SWC file"/>
+
+	</target>
+
+	<target name="deploy" description="perform an deployment operations"/>
+
+	<target name="install" description="perform an installation operations"/>
+
+	<!--
+
+	DELETE the existing output folder and files and then re-generate the output folder
+
+	-->
+
+	<target name="cleanDir" description="DELETE the existing output folder and files and then re-generate the output folder">
+
+		<delete dir="${basedir}/${docsoutputfolder}" failOnError="true" includeEmptyDirs="true"/>
+	
+		<mkdir dir="${basedir}/${docsoutputfolder}"/>
+	
+		<echo>doc directory cleaned</echo>
+
+	</target>
+
+
+	<!--
+
+	Run the ASDoc executable and generate the ASDocs to the new output folder
+
+	-->
+
+	<target name="asDocs" description="Run the ASDoc executable and generate the ASDocs to the new output folder">
+
+		<exec executable="${asdoc.exe}" failonerror="true">
+	
+			<arg line="-doc-sources ${domainextensions}"/>
+		
+			<arg value="-window-title" />
+			<arg value="'${title}'"/>
+			
+			<arg value="-main-title" />
+			<arg value="${maintitle}"/>
+		
+			<arg value="-output" />
+			<arg value="${basedir}/${docsoutputfolder}"/>
+		
+			<arg value="-external-library-path" />
+			<arg value="${basedir}/${libpath}" />
+	
+		</exec>
+	
+		<echo>docs created</echo>
+
+	</target>
+
+	<!-- 
+
+	Compile the  SWC file library including libs folder and the path to our classes
+
+	-->
+
+	<target name="buildSWC" description="Compile the SWC file for the Librayr Project">
+
+		<compc output="${basedir}/${liboutputfolder}/${liboutputfile}">
+	
+			<include-libraries file="${basedir}/${libpath}/corelib.swc" />
+		
+			<source-path path-element="${basedir}" />
+		
+			<include-sources dir="${basedir}/${domainextensions}" includes="*" />
+	
+		</compc>
+	
+		<echo>SWC created</echo>
+
+	</target>
+
+</project>
