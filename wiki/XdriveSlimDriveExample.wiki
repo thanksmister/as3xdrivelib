@@ -25,7 +25,7 @@ Below are links to the latest version of the SlimDrive.
 
 = Instructions =
 
-*Download the zip file for the example
-*Uncompress the folder into your Flex Builder 3 projects directory
-*Import the project into Flex Builder 3
-*Run the application from the IDE and enter your Xdrive credentials
+  * Download the zip file for the example
+  * Uncompress the folder into your Flex Builder 3 projects directory
+  * Import the project into Flex Builder 3
+  * Run the application from the IDE and enter your Xdrive credentials
