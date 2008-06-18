@@ -1,5 +1,5 @@
 #summary Using the Xdrive Library in your project
-#labels Phase-Deploy
+#labels Phase-Deploy,Featured
 
 = Dependencies =
 
