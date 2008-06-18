@@ -37,4 +37,4 @@ The project has the following dependencies:
 == Linking in the ActionScript Source == 
 
   * Add the corelib SWC file to the libs folder
-*Add the "com" directory to your current project
+  * Add the "com" directory to your current project
