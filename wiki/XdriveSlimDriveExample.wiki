@@ -21,3 +21,11 @@ Below are links to the latest version of the SlimDrive.
 
 || File Name || Download ||
 || Xdrive SlimDrive || [http://as3xdrivelib.googlecode.com/svn/trunk/samples/XdriveSlimDrive.zip download zip] ||
+
+
+= Instructions =
+
+*Download the zip file for the example
+*Uncompress the folder into your Flex Builder 3 projects directory
+*Import the project into Flex Builder 3
+*Run the application from the IDE and enter your Xdrive credentials
