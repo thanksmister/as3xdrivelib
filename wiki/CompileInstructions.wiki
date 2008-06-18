@@ -15,7 +15,7 @@ The project has the following dependencies:
   * Check out the code into Flex builder using Subversion  
   * Change the Flex Project Nature to Flex Project Library
 
-= Download the zip file =
+== Download the zip file == 
 
   * Download the current version of the as3xdrivelib zip file from the featured downloads
   * Create a new Flex Library Project in Flex Builder 3 named as3xdrivelib
