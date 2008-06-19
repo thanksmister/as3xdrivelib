@@ -65,6 +65,9 @@ package com.xdrive.json
 		/** Delete asset */
 		public static const ASSET_DELETE:String = "asset.delete";
 		
+		/** Remove asset */
+		public static const ASSET_REMOVE:String = "asset.remove";
+		
 		/** Get Asset with parent id and name */
 		public static const ASSET_GET:String = "asset.get";
 		

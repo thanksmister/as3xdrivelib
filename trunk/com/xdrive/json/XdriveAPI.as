@@ -681,7 +681,7 @@ package com.xdrive.json
 			var token : XdriveAPIToken = makeRequest(urlRequest);
 				token.addEventListener(XdriveAPIEvent.API_RESULT,
 					function(event : XdriveAPIEvent) : void { 
-						collection = CollectionUtils.buildCollection(collection, JSON_END_POINT, event.payload.srcCollection);
+						collection = CollectionUtils.buildCollection(collection, JSON_END_POINT, event.payload.collection);
 						returntoken.dispatchEvent(new XdriveAPIEvent(XdriveAPIEvent.API_RESULT, {"collection":collection}, null, null));
 					});
 				token.addEventListener(XdriveAPIEvent.API_FAILURE,
@@ -743,6 +743,58 @@ package com.xdrive.json
 						returntoken.dispatchEvent(new XdriveAPIEvent(XdriveAPIEvent.API_FAILURE, null, null, event.error));
 					});
 				
+			returntoken.collection = collection;
+			return returntoken;
+		}
+		
+		/**
+		 * This method expunges the object from the system, freeing up any resources it may have held. Asset remove is different than asset delete.
+		 * Asset remove will remove the reference to the object from the container. On the other hand, if asset delete is called with a reference object, 
+		 * the reference object is deleted, not the original resource.  This method should be used for removing assets from a <code>Collection</code>.
+		 * 
+		 * @see deleteAssets
+		 * 
+		 * @param assets Array of assets <code>Media</code> objects to remove
+		 * @param collection  The <code>Collection</code> container object to remove the assets from
+		 * @return A value of assets on the token and the payload value of the event which is a array <code>Media</code> objects
+		 */
+		public function removeAssets(assets : Array, collection:Collection) : XdriveAPIToken 
+		{
+			var arry:Array = new Array();
+			//{"container":{"type":"CollectionObject","id":"xdr:XFS-417769935"},"references":[{"type":"FileObject","id":"xdr:XFS-417852336"}]}
+			
+			for each (var asset:Object in assets)
+			{
+				var referenceObject:Object = new Object();
+				 	referenceObject.type = XdriveAPIFileTypes.FILE_OBJECT;
+				 	referenceObject.id = asset.fileid;
+				 
+				arry.push(referenceObject);
+			}
+			
+			var collectionObject:Object = new Object();
+				collectionObject.type = XdriveAPIFileTypes.COLLECTION_OBJECT;
+				collectionObject.id = collection.fileid;
+				
+			var containerObject:Object = new Object();
+				containerObject.references = arry;
+				containerObject.container = collectionObject;
+				
+			var dataString:String = JSON.encode(containerObject);
+			var urlRequest : URLRequest = createRequest(JSON_END_POINT, XdriveAPIMethods.ASSET_REMOVE, dataString);
+			
+			var returntoken: XdriveAPIToken = new XdriveAPIToken(null);
+			var token : XdriveAPIToken = makeRequest(urlRequest);
+				token.addEventListener(XdriveAPIEvent.API_RESULT,
+					function(event : XdriveAPIEvent) : void { 
+						returntoken.dispatchEvent(new XdriveAPIEvent(XdriveAPIEvent.API_RESULT, {"assets":assets}, null, null));
+					});
+				token.addEventListener(XdriveAPIEvent.API_FAILURE,
+					function(event : XdriveAPIEvent) : void {
+						returntoken.dispatchEvent(new XdriveAPIEvent(XdriveAPIEvent.API_FAILURE, null, null, event.error));
+					});
+				
+			returntoken.assets = assets;
 			returntoken.collection = collection;
 			return returntoken;
 		}
