@@ -1,6 +1,4 @@
 /*
-Copyright (C) 2008 AOL Xdrive
-
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -15,7 +13,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Author: Michael Ritchie, Senior Flex Architect
-        michael.ritchie@corp.aol.com
+        michael.ritchie@gmail.com
 */
 
 package com.xdrive.json
@@ -1756,7 +1754,8 @@ package com.xdrive.json
 			var token : XdriveAPIToken = makeRequest(urlRequest);
 				token.addEventListener(XdriveAPIEvent.API_RESULT,
 					function(event : XdriveAPIEvent) : void { 
-						contacts = event.payload.contacts;
+						
+						contacts = ContactUtils.createContacts(event.payload.contacts);
 						returntoken.dispatchEvent(new XdriveAPIEvent(XdriveAPIEvent.API_RESULT, {"contacts":contacts}, null, null));
 					});
 				token.addEventListener(XdriveAPIEvent.API_FAILURE,
