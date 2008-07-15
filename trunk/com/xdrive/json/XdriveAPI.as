@@ -593,6 +593,8 @@ package com.xdrive.json
 								permission.grantdate = DateUtils.formatDate(String(permissionObj.grantDate)); 
 								
 								shares.addItem(permission);
+								
+								returntoken.dispatchEvent(new XdriveAPIEvent(XdriveAPIEvent.API_RESULT, {"shares":shares}, null, null));
 			
 							} catch(e:Error){trace(e.message);}
 						}
