@@ -430,7 +430,7 @@ package com.xdrive.json
 			dataObject.options = optionsObject;
 			
 			var dataString:String = JSON.encode(dataObject);
-			var urlRequest : URLRequest = createRequest(JSON_END_POINT, XdriveAPIMethods.ASSET_DELETE, dataString);
+			var urlRequest : URLRequest = createRequest(JSON_END_POINT, XdriveAPIMethods.SHARE_GRANTPERMISSION, dataString);
 			
 			var returntoken: XdriveAPIToken = new XdriveAPIToken(null);
 			var token : XdriveAPIToken = makeRequest(urlRequest);
@@ -447,6 +447,49 @@ package com.xdrive.json
 					});
 					
 			returntoken.folders = folders;
+			return returntoken;
+		}
+		
+		/**
+		 * Update permission to for a shared object.
+		 * 
+		 * @param permission <code>Permision</code> to update permissions for
+		 * 
+		 * @return A value of asset on the token and the payload value of the event which is either a <code>Folder</code> or <code>Collection</code> object
+		 */
+		public function updatePermissions(permission : Permission) : XdriveAPIToken
+		{
+			var permissionObject:Object = new Object();
+				permissionObject.type = XdriveAPIFileTypes.SHARE_PERMISSION_OBJECT;
+				permissionObject.id = permission.fileid;
+				permissionObject.hasShare = permission.share;
+				permissionObject.hasWrite = permission.write;
+				permissionObject.hasRead = permission.read;
+				permissionObject.hasDelete = permission.deletion;
+				permissionObject.hasCreate = permission.create;
+				permissionObject.hasModify = permission.modify;
+				
+			var temp:Array = new Array ();
+				temp.push(permissionObject);
+
+			var dataObject:Object = new Object();
+				dataObject.objects = temp;
+				
+			var dataString:String = JSON.encode(dataObject);
+			var urlRequest : URLRequest = createRequest(JSON_END_POINT, XdriveAPIMethods.SHARE_GRANTPERMISSION, dataString);
+			
+			var returntoken: XdriveAPIToken = new XdriveAPIToken(null);
+			var token : XdriveAPIToken = makeRequest(urlRequest);
+				token.addEventListener(XdriveAPIEvent.API_RESULT,
+					function(event : XdriveAPIEvent) : void { 
+						returntoken.dispatchEvent(new XdriveAPIEvent(XdriveAPIEvent.API_RESULT, {"permission":permission}, null, null));
+					});
+				token.addEventListener(XdriveAPIEvent.API_FAILURE,
+					function(event : XdriveAPIEvent) : void {
+						returntoken.dispatchEvent(new XdriveAPIEvent(XdriveAPIEvent.API_FAILURE, null, null, event.error));
+					});	
+					
+			returntoken.permission = permission;
 			return returntoken;
 		}
 		
