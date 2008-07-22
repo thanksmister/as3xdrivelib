@@ -476,7 +476,7 @@ package com.xdrive.json
 				dataObject.objects = temp;
 				
 			var dataString:String = JSON.encode(dataObject);
-			var urlRequest : URLRequest = createRequest(JSON_END_POINT, XdriveAPIMethods.SHARE_GRANTPERMISSION, dataString);
+			var urlRequest : URLRequest = createRequest(JSON_END_POINT, XdriveAPIMethods.ASSET_MODIFY, dataString);
 			
 			var returntoken: XdriveAPIToken = new XdriveAPIToken(null);
 			var token : XdriveAPIToken = makeRequest(urlRequest);
