@@ -24,6 +24,7 @@ package com.xdrive.json.utils
 	import com.xdrive.json.XdriveAPIMethods;
 	import com.xdrive.json.vo.Media;
 	
+	
 	import mx.collections.ArrayCollection;
 	import mx.formatters.NumberFormatter;
 	
@@ -71,7 +72,7 @@ package com.xdrive.json.utils
 			media.thumbnailsmall = json + XdriveAPIMethods.IO_THUMBNAILSMALL + '?data=' + dataString;
 			media.thumbnailmedium = json + XdriveAPIMethods.IO_THUMBNAILMEDIUM + '?data=' + dataString;	
 			media.thumbnaillarge = json + XdriveAPIMethods.IO_THUMBNAILLARGE + '?data=' + dataString;
-			media.orginalimage = json  + XdriveAPIMethods.IO_VIEW + '?data=' + dataString;
+			media.originalimage = json  + XdriveAPIMethods.IO_VIEW + '?data=' + dataString;
 				
 			if(obj.publishId != null) media.htmllink = FileUtils.createPickupLink(XdriveAPI.BASE_URL, obj.publishId);
 			if(obj.publishId != null) media.publishid = obj.publishId;
@@ -185,7 +186,9 @@ package com.xdrive.json.utils
 		 */
 		public static function isFlashMediaType(type:String):Boolean
 		{
+			if (type == null) return false;
 			type = type.toLocaleLowerCase();
+	
 			switch (type)
 			{
 				case "gif":
@@ -210,7 +213,9 @@ package com.xdrive.json.utils
 		 */
 		public static function isVideo(type:String):Boolean
 		{
+			if (type == null) return false;
 			type = type.toLocaleLowerCase();
+		
 			switch (type)
 			{		
 				case "mpeg":
@@ -235,7 +240,9 @@ package com.xdrive.json.utils
 		 */
 		public static function isImage(type:String):Boolean
 		{
+			if (type == null) return false;
 			type = type.toLocaleLowerCase();
+
 			switch (type)
 			{		
 				case "gif":				
@@ -258,10 +265,11 @@ package com.xdrive.json.utils
 		 */
 		public static function isMusic(type:String):Boolean
 		{
+			if (type == null) return false;
 			type = type.toLocaleLowerCase();
-			switch (type)
-			{		
-				case "mp3":						
+			
+			switch (type){		
+				case "mp3":					
 					return true;
 	
 				default:
@@ -278,7 +286,9 @@ package com.xdrive.json.utils
 		 */
 		public static function isPDF(type:String):Boolean
 		{
+			if (type == null) return false;
 			type = type.toLocaleLowerCase();
+	
 			switch (type)
 			{		
 				case "pdf":						
@@ -298,7 +308,9 @@ package com.xdrive.json.utils
 		 */
 		public static function isLegalShare(type:String):Boolean
 		{
+			if (type == null) return false;
 			type = type.toLocaleLowerCase();
+	
 			switch (type)
 			{
 				case "wav":
